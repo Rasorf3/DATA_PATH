@@ -8,22 +8,28 @@ generic(
 			);
 port(
 		CLK,EN,RST :in std_logic;
-		control_in,control_outA,control_outB : std_logic_vector(4 downto 0);
-		REGC : in std_logic_vector(n-1 downto 0);
-		REGA,REGB : out std_logic_vector(n-1 downto 0)
+		control_in,control_outA,control_outB : in std_logic_vector(4 downto 0);
+		REG_cout_out : out std_logic
 		);
 end entity data_path;
 ------------------------------------------------------------------
 architecture struct of data_path is
-	signal REGA_AUX,REGB_AUX,REGC_AUX : std_logic_Vector(n-1 downto 0);
+	signal REG_A_out,REG_B_out,REG_C_out : std_logic_Vector(n-1 downto 0);
+	signal REG_A_in,REG_B_in,REG_C_in : std_logic_Vector(n-1 downto 0);
+	signal REG_cout_in : std_logic;
 begin
 
-	REGIA: entity work.registro_n_reset generic map(n) port map(CLK,EN,RST, REGA_AUX,REGA);
+	REG_A: entity work.registro_n_reset generic map(n) port map(CLK,EN,RST, REG_A_in,REG_A_out);
 	
-	REGIB: entity work.registro_n_reset generic map(n) port map(CLK,EN,RST, REGB_AUX,REGB);
+	REG_B: entity work.registro_n_reset generic map(n) port map(CLK,EN,RST, REG_B_in,REG_B_out);
 	
-	REGIC: entity work.registro_n_reset generic map(n) port map(CLK,EN,RST, REGC,REGC_AUX);
+	REG_C: entity work.registro_n_reset generic map(n) port map(CLK,EN,RST, REG_C_in,REG_C_out);
 	
-	REG_BANK : entity work.Block_REG generic map(n) port map(CLK,control_in,control_outA,control_outB,REGC_AUX,REGA_AUX,REGB_AUX);
+	REG_cout : entity work.FF_D port map(CLK,EN,RST,REG_cout_in, REG_cout_out);
+	
+	ADDER : entity work.sumador_n generic map(n) port map(REG_A_out, REG_B_out, REG_C_in, REG_cout_in);
+	
+	REG_BANK : entity work.Block_REG generic map(n) port map(CLK,control_in,control_outA,control_outB,REG_C_out,REG_A_in,REG_B_in);
 	
 end architecture struct;
+------------------------------------------------------------------

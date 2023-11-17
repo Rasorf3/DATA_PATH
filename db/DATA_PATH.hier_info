@@ -1,14 +1,17 @@
 |data_path
-CLK => registro_n_reset:REGIA.CLK
-CLK => registro_n_reset:REGIB.CLK
-CLK => registro_n_reset:REGIC.CLK
+CLK => registro_n_reset:REG_A.CLK
+CLK => registro_n_reset:REG_B.CLK
+CLK => registro_n_reset:REG_C.CLK
+CLK => ff_d:REG_cout.CLK
 CLK => block_reg:REG_BANK.CLK
-EN => registro_n_reset:REGIA.EN
-EN => registro_n_reset:REGIB.EN
-EN => registro_n_reset:REGIC.EN
-RST => registro_n_reset:REGIA.RST
-RST => registro_n_reset:REGIB.RST
-RST => registro_n_reset:REGIC.RST
+EN => registro_n_reset:REG_A.EN
+EN => registro_n_reset:REG_B.EN
+EN => registro_n_reset:REG_C.EN
+EN => ff_d:REG_cout.EN
+RST => registro_n_reset:REG_A.RST
+RST => registro_n_reset:REG_B.RST
+RST => registro_n_reset:REG_C.RST
+RST => ff_d:REG_cout.RST
 control_in[0] => block_reg:REG_BANK.control_in[0]
 control_in[1] => block_reg:REG_BANK.control_in[1]
 control_in[2] => block_reg:REG_BANK.control_in[2]
@@ -24,105 +27,10 @@ control_outB[1] => block_reg:REG_BANK.control_outB[1]
 control_outB[2] => block_reg:REG_BANK.control_outB[2]
 control_outB[3] => block_reg:REG_BANK.control_outB[3]
 control_outB[4] => block_reg:REG_BANK.control_outB[4]
-REGC[0] => registro_n_reset:REGIC.D[0]
-REGC[1] => registro_n_reset:REGIC.D[1]
-REGC[2] => registro_n_reset:REGIC.D[2]
-REGC[3] => registro_n_reset:REGIC.D[3]
-REGC[4] => registro_n_reset:REGIC.D[4]
-REGC[5] => registro_n_reset:REGIC.D[5]
-REGC[6] => registro_n_reset:REGIC.D[6]
-REGC[7] => registro_n_reset:REGIC.D[7]
-REGC[8] => registro_n_reset:REGIC.D[8]
-REGC[9] => registro_n_reset:REGIC.D[9]
-REGC[10] => registro_n_reset:REGIC.D[10]
-REGC[11] => registro_n_reset:REGIC.D[11]
-REGC[12] => registro_n_reset:REGIC.D[12]
-REGC[13] => registro_n_reset:REGIC.D[13]
-REGC[14] => registro_n_reset:REGIC.D[14]
-REGC[15] => registro_n_reset:REGIC.D[15]
-REGC[16] => registro_n_reset:REGIC.D[16]
-REGC[17] => registro_n_reset:REGIC.D[17]
-REGC[18] => registro_n_reset:REGIC.D[18]
-REGC[19] => registro_n_reset:REGIC.D[19]
-REGC[20] => registro_n_reset:REGIC.D[20]
-REGC[21] => registro_n_reset:REGIC.D[21]
-REGC[22] => registro_n_reset:REGIC.D[22]
-REGC[23] => registro_n_reset:REGIC.D[23]
-REGC[24] => registro_n_reset:REGIC.D[24]
-REGC[25] => registro_n_reset:REGIC.D[25]
-REGC[26] => registro_n_reset:REGIC.D[26]
-REGC[27] => registro_n_reset:REGIC.D[27]
-REGC[28] => registro_n_reset:REGIC.D[28]
-REGC[29] => registro_n_reset:REGIC.D[29]
-REGC[30] => registro_n_reset:REGIC.D[30]
-REGC[31] => registro_n_reset:REGIC.D[31]
-REGA[0] <= registro_n_reset:REGIA.Q[0]
-REGA[1] <= registro_n_reset:REGIA.Q[1]
-REGA[2] <= registro_n_reset:REGIA.Q[2]
-REGA[3] <= registro_n_reset:REGIA.Q[3]
-REGA[4] <= registro_n_reset:REGIA.Q[4]
-REGA[5] <= registro_n_reset:REGIA.Q[5]
-REGA[6] <= registro_n_reset:REGIA.Q[6]
-REGA[7] <= registro_n_reset:REGIA.Q[7]
-REGA[8] <= registro_n_reset:REGIA.Q[8]
-REGA[9] <= registro_n_reset:REGIA.Q[9]
-REGA[10] <= registro_n_reset:REGIA.Q[10]
-REGA[11] <= registro_n_reset:REGIA.Q[11]
-REGA[12] <= registro_n_reset:REGIA.Q[12]
-REGA[13] <= registro_n_reset:REGIA.Q[13]
-REGA[14] <= registro_n_reset:REGIA.Q[14]
-REGA[15] <= registro_n_reset:REGIA.Q[15]
-REGA[16] <= registro_n_reset:REGIA.Q[16]
-REGA[17] <= registro_n_reset:REGIA.Q[17]
-REGA[18] <= registro_n_reset:REGIA.Q[18]
-REGA[19] <= registro_n_reset:REGIA.Q[19]
-REGA[20] <= registro_n_reset:REGIA.Q[20]
-REGA[21] <= registro_n_reset:REGIA.Q[21]
-REGA[22] <= registro_n_reset:REGIA.Q[22]
-REGA[23] <= registro_n_reset:REGIA.Q[23]
-REGA[24] <= registro_n_reset:REGIA.Q[24]
-REGA[25] <= registro_n_reset:REGIA.Q[25]
-REGA[26] <= registro_n_reset:REGIA.Q[26]
-REGA[27] <= registro_n_reset:REGIA.Q[27]
-REGA[28] <= registro_n_reset:REGIA.Q[28]
-REGA[29] <= registro_n_reset:REGIA.Q[29]
-REGA[30] <= registro_n_reset:REGIA.Q[30]
-REGA[31] <= registro_n_reset:REGIA.Q[31]
-REGB[0] <= registro_n_reset:REGIB.Q[0]
-REGB[1] <= registro_n_reset:REGIB.Q[1]
-REGB[2] <= registro_n_reset:REGIB.Q[2]
-REGB[3] <= registro_n_reset:REGIB.Q[3]
-REGB[4] <= registro_n_reset:REGIB.Q[4]
-REGB[5] <= registro_n_reset:REGIB.Q[5]
-REGB[6] <= registro_n_reset:REGIB.Q[6]
-REGB[7] <= registro_n_reset:REGIB.Q[7]
-REGB[8] <= registro_n_reset:REGIB.Q[8]
-REGB[9] <= registro_n_reset:REGIB.Q[9]
-REGB[10] <= registro_n_reset:REGIB.Q[10]
-REGB[11] <= registro_n_reset:REGIB.Q[11]
-REGB[12] <= registro_n_reset:REGIB.Q[12]
-REGB[13] <= registro_n_reset:REGIB.Q[13]
-REGB[14] <= registro_n_reset:REGIB.Q[14]
-REGB[15] <= registro_n_reset:REGIB.Q[15]
-REGB[16] <= registro_n_reset:REGIB.Q[16]
-REGB[17] <= registro_n_reset:REGIB.Q[17]
-REGB[18] <= registro_n_reset:REGIB.Q[18]
-REGB[19] <= registro_n_reset:REGIB.Q[19]
-REGB[20] <= registro_n_reset:REGIB.Q[20]
-REGB[21] <= registro_n_reset:REGIB.Q[21]
-REGB[22] <= registro_n_reset:REGIB.Q[22]
-REGB[23] <= registro_n_reset:REGIB.Q[23]
-REGB[24] <= registro_n_reset:REGIB.Q[24]
-REGB[25] <= registro_n_reset:REGIB.Q[25]
-REGB[26] <= registro_n_reset:REGIB.Q[26]
-REGB[27] <= registro_n_reset:REGIB.Q[27]
-REGB[28] <= registro_n_reset:REGIB.Q[28]
-REGB[29] <= registro_n_reset:REGIB.Q[29]
-REGB[30] <= registro_n_reset:REGIB.Q[30]
-REGB[31] <= registro_n_reset:REGIB.Q[31]
+REG_cout_out <= ff_d:REG_cout.Q
 
 
-|data_path|registro_n_reset:REGIA
+|data_path|registro_n_reset:REG_A
 CLK => ff_d:REG:0:REG.CLK
 CLK => ff_d:REG:1:REG.CLK
 CLK => ff_d:REG:2:REG.CLK
@@ -285,7 +193,7 @@ Q[30] <= ff_d:REG:30:REG.Q
 Q[31] <= ff_d:REG:31:REG.Q
 
 
-|data_path|registro_n_reset:REGIA|FF_D:\REG:0:REG
+|data_path|registro_n_reset:REG_A|FF_D:\REG:0:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -293,7 +201,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIA|FF_D:\REG:1:REG
+|data_path|registro_n_reset:REG_A|FF_D:\REG:1:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -301,7 +209,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIA|FF_D:\REG:2:REG
+|data_path|registro_n_reset:REG_A|FF_D:\REG:2:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -309,7 +217,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIA|FF_D:\REG:3:REG
+|data_path|registro_n_reset:REG_A|FF_D:\REG:3:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -317,7 +225,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIA|FF_D:\REG:4:REG
+|data_path|registro_n_reset:REG_A|FF_D:\REG:4:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -325,7 +233,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIA|FF_D:\REG:5:REG
+|data_path|registro_n_reset:REG_A|FF_D:\REG:5:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -333,7 +241,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIA|FF_D:\REG:6:REG
+|data_path|registro_n_reset:REG_A|FF_D:\REG:6:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -341,7 +249,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIA|FF_D:\REG:7:REG
+|data_path|registro_n_reset:REG_A|FF_D:\REG:7:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -349,7 +257,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIA|FF_D:\REG:8:REG
+|data_path|registro_n_reset:REG_A|FF_D:\REG:8:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -357,7 +265,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIA|FF_D:\REG:9:REG
+|data_path|registro_n_reset:REG_A|FF_D:\REG:9:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -365,7 +273,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIA|FF_D:\REG:10:REG
+|data_path|registro_n_reset:REG_A|FF_D:\REG:10:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -373,7 +281,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIA|FF_D:\REG:11:REG
+|data_path|registro_n_reset:REG_A|FF_D:\REG:11:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -381,7 +289,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIA|FF_D:\REG:12:REG
+|data_path|registro_n_reset:REG_A|FF_D:\REG:12:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -389,7 +297,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIA|FF_D:\REG:13:REG
+|data_path|registro_n_reset:REG_A|FF_D:\REG:13:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -397,7 +305,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIA|FF_D:\REG:14:REG
+|data_path|registro_n_reset:REG_A|FF_D:\REG:14:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -405,7 +313,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIA|FF_D:\REG:15:REG
+|data_path|registro_n_reset:REG_A|FF_D:\REG:15:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -413,7 +321,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIA|FF_D:\REG:16:REG
+|data_path|registro_n_reset:REG_A|FF_D:\REG:16:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -421,7 +329,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIA|FF_D:\REG:17:REG
+|data_path|registro_n_reset:REG_A|FF_D:\REG:17:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -429,7 +337,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIA|FF_D:\REG:18:REG
+|data_path|registro_n_reset:REG_A|FF_D:\REG:18:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -437,7 +345,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIA|FF_D:\REG:19:REG
+|data_path|registro_n_reset:REG_A|FF_D:\REG:19:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -445,7 +353,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIA|FF_D:\REG:20:REG
+|data_path|registro_n_reset:REG_A|FF_D:\REG:20:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -453,7 +361,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIA|FF_D:\REG:21:REG
+|data_path|registro_n_reset:REG_A|FF_D:\REG:21:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -461,7 +369,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIA|FF_D:\REG:22:REG
+|data_path|registro_n_reset:REG_A|FF_D:\REG:22:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -469,7 +377,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIA|FF_D:\REG:23:REG
+|data_path|registro_n_reset:REG_A|FF_D:\REG:23:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -477,7 +385,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIA|FF_D:\REG:24:REG
+|data_path|registro_n_reset:REG_A|FF_D:\REG:24:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -485,7 +393,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIA|FF_D:\REG:25:REG
+|data_path|registro_n_reset:REG_A|FF_D:\REG:25:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -493,7 +401,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIA|FF_D:\REG:26:REG
+|data_path|registro_n_reset:REG_A|FF_D:\REG:26:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -501,7 +409,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIA|FF_D:\REG:27:REG
+|data_path|registro_n_reset:REG_A|FF_D:\REG:27:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -509,7 +417,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIA|FF_D:\REG:28:REG
+|data_path|registro_n_reset:REG_A|FF_D:\REG:28:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -517,7 +425,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIA|FF_D:\REG:29:REG
+|data_path|registro_n_reset:REG_A|FF_D:\REG:29:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -525,7 +433,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIA|FF_D:\REG:30:REG
+|data_path|registro_n_reset:REG_A|FF_D:\REG:30:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -533,7 +441,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIA|FF_D:\REG:31:REG
+|data_path|registro_n_reset:REG_A|FF_D:\REG:31:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -541,7 +449,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIB
+|data_path|registro_n_reset:REG_B
 CLK => ff_d:REG:0:REG.CLK
 CLK => ff_d:REG:1:REG.CLK
 CLK => ff_d:REG:2:REG.CLK
@@ -704,7 +612,7 @@ Q[30] <= ff_d:REG:30:REG.Q
 Q[31] <= ff_d:REG:31:REG.Q
 
 
-|data_path|registro_n_reset:REGIB|FF_D:\REG:0:REG
+|data_path|registro_n_reset:REG_B|FF_D:\REG:0:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -712,7 +620,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIB|FF_D:\REG:1:REG
+|data_path|registro_n_reset:REG_B|FF_D:\REG:1:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -720,7 +628,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIB|FF_D:\REG:2:REG
+|data_path|registro_n_reset:REG_B|FF_D:\REG:2:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -728,7 +636,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIB|FF_D:\REG:3:REG
+|data_path|registro_n_reset:REG_B|FF_D:\REG:3:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -736,7 +644,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIB|FF_D:\REG:4:REG
+|data_path|registro_n_reset:REG_B|FF_D:\REG:4:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -744,7 +652,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIB|FF_D:\REG:5:REG
+|data_path|registro_n_reset:REG_B|FF_D:\REG:5:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -752,7 +660,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIB|FF_D:\REG:6:REG
+|data_path|registro_n_reset:REG_B|FF_D:\REG:6:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -760,7 +668,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIB|FF_D:\REG:7:REG
+|data_path|registro_n_reset:REG_B|FF_D:\REG:7:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -768,7 +676,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIB|FF_D:\REG:8:REG
+|data_path|registro_n_reset:REG_B|FF_D:\REG:8:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -776,7 +684,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIB|FF_D:\REG:9:REG
+|data_path|registro_n_reset:REG_B|FF_D:\REG:9:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -784,7 +692,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIB|FF_D:\REG:10:REG
+|data_path|registro_n_reset:REG_B|FF_D:\REG:10:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -792,7 +700,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIB|FF_D:\REG:11:REG
+|data_path|registro_n_reset:REG_B|FF_D:\REG:11:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -800,7 +708,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIB|FF_D:\REG:12:REG
+|data_path|registro_n_reset:REG_B|FF_D:\REG:12:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -808,7 +716,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIB|FF_D:\REG:13:REG
+|data_path|registro_n_reset:REG_B|FF_D:\REG:13:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -816,7 +724,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIB|FF_D:\REG:14:REG
+|data_path|registro_n_reset:REG_B|FF_D:\REG:14:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -824,7 +732,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIB|FF_D:\REG:15:REG
+|data_path|registro_n_reset:REG_B|FF_D:\REG:15:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -832,7 +740,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIB|FF_D:\REG:16:REG
+|data_path|registro_n_reset:REG_B|FF_D:\REG:16:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -840,7 +748,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIB|FF_D:\REG:17:REG
+|data_path|registro_n_reset:REG_B|FF_D:\REG:17:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -848,7 +756,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIB|FF_D:\REG:18:REG
+|data_path|registro_n_reset:REG_B|FF_D:\REG:18:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -856,7 +764,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIB|FF_D:\REG:19:REG
+|data_path|registro_n_reset:REG_B|FF_D:\REG:19:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -864,7 +772,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIB|FF_D:\REG:20:REG
+|data_path|registro_n_reset:REG_B|FF_D:\REG:20:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -872,7 +780,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIB|FF_D:\REG:21:REG
+|data_path|registro_n_reset:REG_B|FF_D:\REG:21:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -880,7 +788,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIB|FF_D:\REG:22:REG
+|data_path|registro_n_reset:REG_B|FF_D:\REG:22:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -888,7 +796,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIB|FF_D:\REG:23:REG
+|data_path|registro_n_reset:REG_B|FF_D:\REG:23:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -896,7 +804,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIB|FF_D:\REG:24:REG
+|data_path|registro_n_reset:REG_B|FF_D:\REG:24:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -904,7 +812,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIB|FF_D:\REG:25:REG
+|data_path|registro_n_reset:REG_B|FF_D:\REG:25:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -912,7 +820,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIB|FF_D:\REG:26:REG
+|data_path|registro_n_reset:REG_B|FF_D:\REG:26:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -920,7 +828,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIB|FF_D:\REG:27:REG
+|data_path|registro_n_reset:REG_B|FF_D:\REG:27:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -928,7 +836,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIB|FF_D:\REG:28:REG
+|data_path|registro_n_reset:REG_B|FF_D:\REG:28:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -936,7 +844,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIB|FF_D:\REG:29:REG
+|data_path|registro_n_reset:REG_B|FF_D:\REG:29:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -944,7 +852,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIB|FF_D:\REG:30:REG
+|data_path|registro_n_reset:REG_B|FF_D:\REG:30:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -952,7 +860,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIB|FF_D:\REG:31:REG
+|data_path|registro_n_reset:REG_B|FF_D:\REG:31:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -960,7 +868,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIC
+|data_path|registro_n_reset:REG_C
 CLK => ff_d:REG:0:REG.CLK
 CLK => ff_d:REG:1:REG.CLK
 CLK => ff_d:REG:2:REG.CLK
@@ -1123,7 +1031,7 @@ Q[30] <= ff_d:REG:30:REG.Q
 Q[31] <= ff_d:REG:31:REG.Q
 
 
-|data_path|registro_n_reset:REGIC|FF_D:\REG:0:REG
+|data_path|registro_n_reset:REG_C|FF_D:\REG:0:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -1131,7 +1039,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIC|FF_D:\REG:1:REG
+|data_path|registro_n_reset:REG_C|FF_D:\REG:1:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -1139,7 +1047,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIC|FF_D:\REG:2:REG
+|data_path|registro_n_reset:REG_C|FF_D:\REG:2:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -1147,7 +1055,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIC|FF_D:\REG:3:REG
+|data_path|registro_n_reset:REG_C|FF_D:\REG:3:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -1155,7 +1063,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIC|FF_D:\REG:4:REG
+|data_path|registro_n_reset:REG_C|FF_D:\REG:4:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -1163,7 +1071,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIC|FF_D:\REG:5:REG
+|data_path|registro_n_reset:REG_C|FF_D:\REG:5:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -1171,7 +1079,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIC|FF_D:\REG:6:REG
+|data_path|registro_n_reset:REG_C|FF_D:\REG:6:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -1179,7 +1087,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIC|FF_D:\REG:7:REG
+|data_path|registro_n_reset:REG_C|FF_D:\REG:7:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -1187,7 +1095,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIC|FF_D:\REG:8:REG
+|data_path|registro_n_reset:REG_C|FF_D:\REG:8:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -1195,7 +1103,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIC|FF_D:\REG:9:REG
+|data_path|registro_n_reset:REG_C|FF_D:\REG:9:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -1203,7 +1111,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIC|FF_D:\REG:10:REG
+|data_path|registro_n_reset:REG_C|FF_D:\REG:10:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -1211,7 +1119,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIC|FF_D:\REG:11:REG
+|data_path|registro_n_reset:REG_C|FF_D:\REG:11:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -1219,7 +1127,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIC|FF_D:\REG:12:REG
+|data_path|registro_n_reset:REG_C|FF_D:\REG:12:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -1227,7 +1135,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIC|FF_D:\REG:13:REG
+|data_path|registro_n_reset:REG_C|FF_D:\REG:13:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -1235,7 +1143,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIC|FF_D:\REG:14:REG
+|data_path|registro_n_reset:REG_C|FF_D:\REG:14:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -1243,7 +1151,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIC|FF_D:\REG:15:REG
+|data_path|registro_n_reset:REG_C|FF_D:\REG:15:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -1251,7 +1159,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIC|FF_D:\REG:16:REG
+|data_path|registro_n_reset:REG_C|FF_D:\REG:16:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -1259,7 +1167,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIC|FF_D:\REG:17:REG
+|data_path|registro_n_reset:REG_C|FF_D:\REG:17:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -1267,7 +1175,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIC|FF_D:\REG:18:REG
+|data_path|registro_n_reset:REG_C|FF_D:\REG:18:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -1275,7 +1183,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIC|FF_D:\REG:19:REG
+|data_path|registro_n_reset:REG_C|FF_D:\REG:19:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -1283,7 +1191,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIC|FF_D:\REG:20:REG
+|data_path|registro_n_reset:REG_C|FF_D:\REG:20:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -1291,7 +1199,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIC|FF_D:\REG:21:REG
+|data_path|registro_n_reset:REG_C|FF_D:\REG:21:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -1299,7 +1207,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIC|FF_D:\REG:22:REG
+|data_path|registro_n_reset:REG_C|FF_D:\REG:22:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -1307,7 +1215,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIC|FF_D:\REG:23:REG
+|data_path|registro_n_reset:REG_C|FF_D:\REG:23:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -1315,7 +1223,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIC|FF_D:\REG:24:REG
+|data_path|registro_n_reset:REG_C|FF_D:\REG:24:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -1323,7 +1231,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIC|FF_D:\REG:25:REG
+|data_path|registro_n_reset:REG_C|FF_D:\REG:25:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -1331,7 +1239,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIC|FF_D:\REG:26:REG
+|data_path|registro_n_reset:REG_C|FF_D:\REG:26:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -1339,7 +1247,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIC|FF_D:\REG:27:REG
+|data_path|registro_n_reset:REG_C|FF_D:\REG:27:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -1347,7 +1255,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIC|FF_D:\REG:28:REG
+|data_path|registro_n_reset:REG_C|FF_D:\REG:28:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -1355,7 +1263,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIC|FF_D:\REG:29:REG
+|data_path|registro_n_reset:REG_C|FF_D:\REG:29:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -1363,7 +1271,7 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIC|FF_D:\REG:30:REG
+|data_path|registro_n_reset:REG_C|FF_D:\REG:30:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
@@ -1371,12 +1279,568 @@ D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|data_path|registro_n_reset:REGIC|FF_D:\REG:31:REG
+|data_path|registro_n_reset:REG_C|FF_D:\REG:31:REG
 CLK => Q~reg0.CLK
 EN => Q~reg0.ENA
 RST => Q~reg0.ACLR
 D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|data_path|FF_D:REG_cout
+CLK => Q~reg0.CLK
+EN => Q~reg0.ENA
+RST => Q~reg0.ACLR
+D => Q~reg0.DATAIN
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|data_path|sumador_n:ADDER
+a[0] => full_adder:adder:0:data.a
+a[1] => full_adder:adder:1:data.a
+a[2] => full_adder:adder:2:data.a
+a[3] => full_adder:adder:3:data.a
+a[4] => full_adder:adder:4:data.a
+a[5] => full_adder:adder:5:data.a
+a[6] => full_adder:adder:6:data.a
+a[7] => full_adder:adder:7:data.a
+a[8] => full_adder:adder:8:data.a
+a[9] => full_adder:adder:9:data.a
+a[10] => full_adder:adder:10:data.a
+a[11] => full_adder:adder:11:data.a
+a[12] => full_adder:adder:12:data.a
+a[13] => full_adder:adder:13:data.a
+a[14] => full_adder:adder:14:data.a
+a[15] => full_adder:adder:15:data.a
+a[16] => full_adder:adder:16:data.a
+a[17] => full_adder:adder:17:data.a
+a[18] => full_adder:adder:18:data.a
+a[19] => full_adder:adder:19:data.a
+a[20] => full_adder:adder:20:data.a
+a[21] => full_adder:adder:21:data.a
+a[22] => full_adder:adder:22:data.a
+a[23] => full_adder:adder:23:data.a
+a[24] => full_adder:adder:24:data.a
+a[25] => full_adder:adder:25:data.a
+a[26] => full_adder:adder:26:data.a
+a[27] => full_adder:adder:27:data.a
+a[28] => full_adder:adder:28:data.a
+a[29] => full_adder:adder:29:data.a
+a[30] => full_adder:adder:30:data.a
+a[31] => full_adder:adder:31:data.a
+b[0] => full_adder:adder:0:data.b
+b[1] => full_adder:adder:1:data.b
+b[2] => full_adder:adder:2:data.b
+b[3] => full_adder:adder:3:data.b
+b[4] => full_adder:adder:4:data.b
+b[5] => full_adder:adder:5:data.b
+b[6] => full_adder:adder:6:data.b
+b[7] => full_adder:adder:7:data.b
+b[8] => full_adder:adder:8:data.b
+b[9] => full_adder:adder:9:data.b
+b[10] => full_adder:adder:10:data.b
+b[11] => full_adder:adder:11:data.b
+b[12] => full_adder:adder:12:data.b
+b[13] => full_adder:adder:13:data.b
+b[14] => full_adder:adder:14:data.b
+b[15] => full_adder:adder:15:data.b
+b[16] => full_adder:adder:16:data.b
+b[17] => full_adder:adder:17:data.b
+b[18] => full_adder:adder:18:data.b
+b[19] => full_adder:adder:19:data.b
+b[20] => full_adder:adder:20:data.b
+b[21] => full_adder:adder:21:data.b
+b[22] => full_adder:adder:22:data.b
+b[23] => full_adder:adder:23:data.b
+b[24] => full_adder:adder:24:data.b
+b[25] => full_adder:adder:25:data.b
+b[26] => full_adder:adder:26:data.b
+b[27] => full_adder:adder:27:data.b
+b[28] => full_adder:adder:28:data.b
+b[29] => full_adder:adder:29:data.b
+b[30] => full_adder:adder:30:data.b
+b[31] => full_adder:adder:31:data.b
+s[0] <= full_adder:adder:0:data.s
+s[1] <= full_adder:adder:1:data.s
+s[2] <= full_adder:adder:2:data.s
+s[3] <= full_adder:adder:3:data.s
+s[4] <= full_adder:adder:4:data.s
+s[5] <= full_adder:adder:5:data.s
+s[6] <= full_adder:adder:6:data.s
+s[7] <= full_adder:adder:7:data.s
+s[8] <= full_adder:adder:8:data.s
+s[9] <= full_adder:adder:9:data.s
+s[10] <= full_adder:adder:10:data.s
+s[11] <= full_adder:adder:11:data.s
+s[12] <= full_adder:adder:12:data.s
+s[13] <= full_adder:adder:13:data.s
+s[14] <= full_adder:adder:14:data.s
+s[15] <= full_adder:adder:15:data.s
+s[16] <= full_adder:adder:16:data.s
+s[17] <= full_adder:adder:17:data.s
+s[18] <= full_adder:adder:18:data.s
+s[19] <= full_adder:adder:19:data.s
+s[20] <= full_adder:adder:20:data.s
+s[21] <= full_adder:adder:21:data.s
+s[22] <= full_adder:adder:22:data.s
+s[23] <= full_adder:adder:23:data.s
+s[24] <= full_adder:adder:24:data.s
+s[25] <= full_adder:adder:25:data.s
+s[26] <= full_adder:adder:26:data.s
+s[27] <= full_adder:adder:27:data.s
+s[28] <= full_adder:adder:28:data.s
+s[29] <= full_adder:adder:29:data.s
+s[30] <= full_adder:adder:30:data.s
+s[31] <= full_adder:adder:31:data.s
+cout <= full_adder:adder:31:data.cout
+
+
+|data_path|sumador_n:ADDER|full_adder:\adder:0:data
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|data_path|sumador_n:ADDER|full_adder:\adder:1:data
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|data_path|sumador_n:ADDER|full_adder:\adder:2:data
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|data_path|sumador_n:ADDER|full_adder:\adder:3:data
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|data_path|sumador_n:ADDER|full_adder:\adder:4:data
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|data_path|sumador_n:ADDER|full_adder:\adder:5:data
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|data_path|sumador_n:ADDER|full_adder:\adder:6:data
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|data_path|sumador_n:ADDER|full_adder:\adder:7:data
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|data_path|sumador_n:ADDER|full_adder:\adder:8:data
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|data_path|sumador_n:ADDER|full_adder:\adder:9:data
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|data_path|sumador_n:ADDER|full_adder:\adder:10:data
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|data_path|sumador_n:ADDER|full_adder:\adder:11:data
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|data_path|sumador_n:ADDER|full_adder:\adder:12:data
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|data_path|sumador_n:ADDER|full_adder:\adder:13:data
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|data_path|sumador_n:ADDER|full_adder:\adder:14:data
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|data_path|sumador_n:ADDER|full_adder:\adder:15:data
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|data_path|sumador_n:ADDER|full_adder:\adder:16:data
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|data_path|sumador_n:ADDER|full_adder:\adder:17:data
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|data_path|sumador_n:ADDER|full_adder:\adder:18:data
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|data_path|sumador_n:ADDER|full_adder:\adder:19:data
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|data_path|sumador_n:ADDER|full_adder:\adder:20:data
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|data_path|sumador_n:ADDER|full_adder:\adder:21:data
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|data_path|sumador_n:ADDER|full_adder:\adder:22:data
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|data_path|sumador_n:ADDER|full_adder:\adder:23:data
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|data_path|sumador_n:ADDER|full_adder:\adder:24:data
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|data_path|sumador_n:ADDER|full_adder:\adder:25:data
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|data_path|sumador_n:ADDER|full_adder:\adder:26:data
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|data_path|sumador_n:ADDER|full_adder:\adder:27:data
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|data_path|sumador_n:ADDER|full_adder:\adder:28:data
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|data_path|sumador_n:ADDER|full_adder:\adder:29:data
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|data_path|sumador_n:ADDER|full_adder:\adder:30:data
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|data_path|sumador_n:ADDER|full_adder:\adder:31:data
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |data_path|Block_REG:REG_BANK
