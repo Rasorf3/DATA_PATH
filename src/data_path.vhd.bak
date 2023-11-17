@@ -1,0 +1,13 @@
+------------------------------------------------------------------
+Library IEEE;
+use IEEE.std_logic_1164.all;
+------------------------------------------------------------------
+entity data_path is
+port(
+		
+		);
+end entity data_path;
+------------------------------------------------------------------
+architecture struct of data_path is
+begin
+end architecture struct;
