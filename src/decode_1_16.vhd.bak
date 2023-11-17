@@ -1,0 +1,84 @@
+----------------------------------------------------------
+Library IEEE;
+use IEEE.std_logic_1164.all;
+----------------------------------------------------------
+entity decode_1_16 is
+port(
+		control : in std_logic_vector(3 downto 0);
+		D : out std_logic_vector(15 downto 0)
+		);
+end entity decode_1_16;
+----------------------------------------------------------
+architecture beh of decode_1_16 is
+begin
+	process(control,D) is
+		begin
+			case(control) is
+				
+				when x"0" =>
+					D0 <= '1';
+					D <= (others => '0');
+				
+				when x"1" =>
+					D1 <= '1';
+					D <= (others => '0');
+					
+				when x"2" =>
+					D2 <= '1';
+					D <= (others => '0');
+					
+				when x"3" =>
+					D3 <= '1';
+					D <= (others => '0');
+					
+				when x"4" =>
+					D4 <= '1';
+					D <= (others => '0');
+					
+				when x"5" =>
+					D5 <= '1';
+					D <= (others => '0');
+					
+				when x"6" =>
+					D6 <= '1';
+					D <= (others => '0');
+					
+				when x"7" =>
+					D7 <= '1';
+					D <= (others => '0');
+					
+				when x"8" =>
+					D8 <= '1';
+					D <= (others => '0');
+					
+				when x"9" =>
+					D9 <= '1';
+					D <= (others => '0');
+					
+				when x"A" =>
+					D10 <= '1';
+					D <= (others => '0');
+					
+				when x"B" =>
+					D11 <= '1';
+					D <= (others => '0');
+					
+				when x"C" =>
+					D12 <= '1';
+					D <= (others => '0');
+					
+				when x"D" =>
+					D13 <= '1';
+					D <= (others => '0');
+					
+				when x"E" =>
+					D14 <= '1';
+					D <= (others => '0');
+					
+				when x"F" =>
+					D5 <= '1';
+					D <= (others => '0');
+			end case;
+		end process;			
+end architecture beh;
+----------------------------------------------------------

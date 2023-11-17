@@ -1,0 +1,36 @@
+----------------------------------------------------------
+Library IEEE;
+use IEEE.std_logic_1164.all;
+----------------------------------------------------------
+entity File32x32 is
+generic(
+			constant n : natural := 16
+			);
+port(
+		CLK : in std_logic;
+		EN,RST : in std_logic_vector(n-1 downto 0);
+		D0,D1,D2,D3,D4,D5,D6,D7,D8,D9,D10,D11,D12,D13,D14,D15 : in std_logic_Vector(n-1 downto 0);
+		Q0,Q1,Q2,Q3,Q4,Q5,Q6,Q7,Q8,Q9,Q10,Q11,Q12,Q13,Q14,Q15	: out std_logic_Vector(n-1 downto 0)
+		);
+end entity File32x32;
+----------------------------------------------------------
+architecture beh of File32x32 is
+begin
+	REG0: entity work.registro_n generic map(n) port map(CLK,EN(0),RST(0),D0,Q0);
+	REG1: entity work.registro_n generic map(n) port map(CLK,EN(1),RST(1),D1,Q1);
+	REG2: entity work.registro_n generic map(n) port map(CLK,EN(2),RST(2),D2,Q2);
+	REG3: entity work.registro_n generic map(n) port map(CLK,EN(3),RST(3),D3,Q3);
+	REG4: entity work.registro_n generic map(n) port map(CLK,EN(4),RST(4),D4,Q4);
+	REG5: entity work.registro_n generic map(n) port map(CLK,EN(5),RST(5),D5,Q5);
+	REG6: entity work.registro_n generic map(n) port map(CLK,EN(6),RST(6),D6,Q6);
+	REG7: entity work.registro_n generic map(n) port map(CLK,EN(7),RST(7),D7,Q7);
+	REG8: entity work.registro_n generic map(n) port map(CLK,EN(8),RST(8),D8,Q8);
+	REG9: entity work.registro_n generic map(n) port map(CLK,EN(9),RST(9),D9,Q9);
+	REG10: entity work.registro_n generic map(n) port map(CLK,EN(10),RST(10),D10,Q10);
+	REG11: entity work.registro_n generic map(n) port map(CLK,EN(11),RST(11),D11,Q11);
+	REG12: entity work.registro_n generic map(n) port map(CLK,EN(12),RST(12),D12,Q12);
+	REG13: entity work.registro_n generic map(n) port map(CLK,EN(13),RST(13),D13,Q13);
+	REG14: entity work.registro_n generic map(n) port map(CLK,EN(14),RST(14),D14,Q14);
+	REG15: entity work.registro_n generic map(n) port map(CLK,EN(15),RST(15),D15,Q15);
+end architecture beh;
+----------------------------------------------------------

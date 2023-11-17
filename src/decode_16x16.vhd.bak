@@ -1,0 +1,34 @@
+----------------------------------------------------------
+Library IEEE;
+use IEEE.std_logic_1164.all;
+----------------------------------------------------------
+entity decode_16x16 is
+port(
+		control : in std_logic_vector(3 downto 0);
+		D0,D1,D2,D3,D4,D5,D6,D7,D8,D9,D10,D11,D12,D13,D14,D15 : in std_logic_vector(15 downto 0);
+		F			  : out std_logic_vector(15 downto 0)
+		);
+end entity decode_16x16;
+----------------------------------------------------------
+architecture beh of decode_16x16 is
+begin
+	
+		F <=
+				D0 when control = x"0" else,
+				D1 when control = x"1" else,
+				D2 when control = x"2" else,
+				D3 when control = x"3" else,
+				D4 when control = x"4" else,
+				D5 when control = x"5" else,
+				D6 when control = x"6" else,
+				D7 when control = x"7" else,
+				D8 when control = x"8" else,
+				D9 when control = x"9" else,
+				D10 when control = x"A" else,
+				D11 when control = x"B" else,
+				D12 when control = x"C" else,
+				D13 when control = x"D" else,
+				D14 when control = x"E" else,
+				D15;
+end architecture beh;
+----------------------------------------------------------
