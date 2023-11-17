@@ -1,0 +1,13 @@
+------------------------------------------------------------
+Library IEEE;
+use IEEE.std_logic_1164.all;
+------------------------------------------------------------
+entity control_path is
+port(
+		
+		);
+end entity control_path;
+------------------------------------------------------------
+architecture struc of control_path is
+begin
+end architecture struc;
