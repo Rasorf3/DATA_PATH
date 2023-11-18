@@ -9,6 +9,7 @@ generic(
 port(
 		CLK,EN,RST :in std_logic;
 		control_in,control_outA,control_outB : in std_logic_vector(4 downto 0);
+		S : in std_logic_Vector(1 downto 0);
 		REG_cout_out : out std_logic
 		);
 end entity data_path;
@@ -27,7 +28,7 @@ begin
 	
 	REG_cout : entity work.FF_D port map(CLK,EN,RST,REG_cout_in, REG_cout_out);
 	
-	ADDER : entity work.sumador_n generic map(n) port map(REG_A_out, REG_B_out, REG_C_in, REG_cout_in);
+	ALU : entity work.ALU_n generic map(n) port map(S,REG_A_out, REG_B_out, REG_C_in, REG_cout_in);
 	
 	REG_BANK : entity work.Block_REG generic map(n) port map(CLK,control_in,control_outA,control_outB,REG_C_out,REG_A_in,REG_B_in);
 	
