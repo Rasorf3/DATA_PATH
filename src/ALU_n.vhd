@@ -20,7 +20,7 @@ architecture struc of ALU_n is
 begin
 	opera_sum : entity work.sumador_n generic map(n) port map(A,B,suma, cout_suma);
 	
-	opera_res : entity work.sumador_n generic map(n) port map(A,B,resta, cout_resta);
+	opera_res : entity work.restador_n generic map(n) port map(A,B,resta, cout_resta);
 	
 	opera_and : entity work.and_n generic map(n) port map(A,B,and_op);
 	
