@@ -1,5 +1,5 @@
 Flow report for DATA_PATH
-Tue Nov 21 10:58:43 2023
+Tue Nov 21 11:37:51 2023
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -41,20 +41,20 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Tue Nov 21 10:58:39 2023       ;
+; Flow Status                        ; Successful - Tue Nov 21 11:37:51 2023       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; DATA_PATH                                   ;
-; Top-level Entity Name              ; UV3                                         ;
+; Top-level Entity Name              ; control_path                                ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 1,652 / 114,480 ( 1 % )                     ;
-;     Total combinational functions  ; 1,645 / 114,480 ( 1 % )                     ;
-;     Dedicated logic registers      ; 1,121 / 114,480 ( < 1 % )                   ;
-; Total registers                    ; 1121                                        ;
-; Total pins                         ; 36 / 529 ( 7 % )                            ;
+; Total logic elements               ; 32 / 114,480 ( < 1 % )                      ;
+;     Total combinational functions  ; 2 / 114,480 ( < 1 % )                       ;
+;     Dedicated logic registers      ; 32 / 114,480 ( < 1 % )                      ;
+; Total registers                    ; 32                                          ;
+; Total pins                         ; 4 / 529 ( < 1 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 1,024 / 3,981,312 ( < 1 % )                 ;
+; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
 ; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
 +------------------------------------+---------------------------------------------+
@@ -65,26 +65,26 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/21/2023 10:57:54 ;
+; Start date & time ; 11/21/2023 11:36:48 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DATA_PATH           ;
 +-------------------+---------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                        ;
-+-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
-+-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 2499179806619.170058227410688          ; --            ; --          ; --         ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; UV3         ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; UV3         ; Top        ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; UV3         ; Top        ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --         ;
-; TOP_LEVEL_ENTITY                    ; UV3                                    ; DATA_PATH     ; --          ; --         ;
-+-------------------------------------+----------------------------------------+---------------+-------------+------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                         ;
++-------------------------------------+----------------------------------------+---------------+--------------+------------+
+; Assignment Name                     ; Value                                  ; Default Value ; Entity Name  ; Section Id ;
++-------------------------------------+----------------------------------------+---------------+--------------+------------+
+; COMPILER_SIGNATURE_ID               ; 2499179806619.170058460803000          ; --            ; --           ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --           ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --           ; --         ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; control_path ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; control_path ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; control_path ; Top        ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --           ; --         ;
+; TOP_LEVEL_ENTITY                    ; control_path                           ; DATA_PATH     ; --           ; --         ;
++-------------------------------------+----------------------------------------+---------------+--------------+------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -92,11 +92,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:15     ; 1.0                     ; 4853 MB             ; 00:00:28                           ;
-; Fitter               ; 00:00:24     ; 1.1                     ; 6060 MB             ; 00:00:48                           ;
-; Assembler            ; 00:00:03     ; 1.0                     ; 4702 MB             ; 00:00:03                           ;
-; Timing Analyzer      ; 00:00:03     ; 1.3                     ; 4924 MB             ; 00:00:03                           ;
-; Total                ; 00:00:45     ; --                      ; --                  ; 00:01:22                           ;
+; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 4827 MB             ; 00:00:24                           ;
+; Fitter               ; 00:00:17     ; 1.0                     ; 5996 MB             ; 00:00:28                           ;
+; Assembler            ; 00:00:04     ; 1.0                     ; 4689 MB             ; 00:00:03                           ;
+; Timing Analyzer      ; 00:00:02     ; 1.0                     ; 4892 MB             ; 00:00:02                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4635 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4644 MB             ; 00:00:01                           ;
+; Total                ; 00:00:35     ; --                      ; --                  ; 00:00:59                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -109,6 +111,8 @@ https://fpgasoftware.intel.com/eula.
 ; Fitter               ; DESKTOP-5IGSDNN  ; Windows 10 ; 10.0       ; x86_64         ;
 ; Assembler            ; DESKTOP-5IGSDNN  ; Windows 10 ; 10.0       ; x86_64         ;
 ; Timing Analyzer      ; DESKTOP-5IGSDNN  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-5IGSDNN  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-5IGSDNN  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -119,6 +123,8 @@ quartus_map --read_settings_files=on --write_settings_files=off DATA_PATH -c DAT
 quartus_fit --read_settings_files=off --write_settings_files=off DATA_PATH -c DATA_PATH
 quartus_asm --read_settings_files=off --write_settings_files=off DATA_PATH -c DATA_PATH
 quartus_sta DATA_PATH -c DATA_PATH
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off DATA_PATH -c DATA_PATH --vector_source=C:/Repositorios/DATA_PATH/Waveform3.vwf --testbench_file=C:/Repositorios/DATA_PATH/simulation/qsim/Waveform3.vwf.vht
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Repositorios/DATA_PATH/simulation/qsim/ DATA_PATH -c DATA_PATH
 
 
 

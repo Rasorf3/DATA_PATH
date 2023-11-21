@@ -7,7 +7,10 @@ generic(
 			constant n : natural := 32
 			);
 port(
-		CLK,EN,RST,Write_Enable,control_REGC_REGIN :in std_logic;
+		CLK : in std_logic;
+		EN_REG_A,EN_REG_B,EN_REG_C,EN_REG_IN,EN_REG_OUT,EN_REG_COUT : in std_logic;
+		RST_REG_A,RST_REG_B,RST_REG_C,RST_REG_OUT,RST_REG_IN,RST_REG_COUT : in std_logic;
+		Write_Enable,control_REGC_REGIN :in std_logic;
 		control_in,control_outA,control_outB,Read_Address,Write_Address : in std_logic_vector(4 downto 0);
 		S : in std_logic_Vector(1 downto 0);
 		shift : in std_logic_vector(2 downto 0);
@@ -20,12 +23,15 @@ begin
 	DATA_PATH : entity work.data_path 
 		generic map(
 						n
-						) 
+						)
 		port map(
-					CLK,EN,RST,Write_Enable,control_REGC_REGIN,
-					control_in,control_outA,control_outB,Read_Address,Write_Address,
-					S,
-					Shift, 
-					REG_cout_out
-					);
+				CLK,
+				EN_REG_A,EN_REG_B,EN_REG_C,EN_REG_IN,EN_REG_OUT,EN_REG_COUT,
+				RST_REG_A,RST_REG_B,RST_REG_C,RST_REG_OUT,RST_REG_IN,RST_REG_COUT,
+				Write_Enable,control_REGC_REGIN,
+				control_in,control_outA,control_outB,Read_Address,Write_Address,
+				S,
+				shift,
+				REG_cout_out
+				);
 end architecture RTL;

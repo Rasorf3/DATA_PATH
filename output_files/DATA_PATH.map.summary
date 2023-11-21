@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Tue Nov 21 10:58:09 2023
+Analysis & Synthesis Status : Successful - Tue Nov 21 11:36:59 2023
 Quartus Prime Version : 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 Revision Name : DATA_PATH
-Top-level Entity Name : UV3
+Top-level Entity Name : control_path
 Family : Cyclone IV E
-Total logic elements : 2,669
-    Total combinational functions : 1,645
-    Dedicated logic registers : 1,153
-Total registers : 1153
-Total pins : 36
+Total logic elements : 32
+    Total combinational functions : 2
+    Dedicated logic registers : 32
+Total registers : 32
+Total pins : 4
 Total virtual pins : 0
-Total memory bits : 1,024
+Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 0
