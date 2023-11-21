@@ -24,6 +24,26 @@
 					"strict" : false
 				},
 				{
+					"name" : "control_outA[2]",
+					"strict" : false
+				},
+				{
+					"name" : "control_outA[3]",
+					"strict" : false
+				},
+				{
+					"name" : "control_outA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "control_outA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "control_outA[4]",
+					"strict" : false
+				},
+				{
 					"name" : "control_outB[2]",
 					"strict" : false
 				},
@@ -44,23 +64,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "control_outA[2]",
+					"name" : "control_REGC_REGIN",
 					"strict" : false
 				},
 				{
-					"name" : "control_outA[3]",
-					"strict" : false
-				},
-				{
-					"name" : "control_outA[1]",
-					"strict" : false
-				},
-				{
-					"name" : "control_outA[0]",
-					"strict" : false
-				},
-				{
-					"name" : "control_outA[4]",
+					"name" : "control_in[0]",
 					"strict" : false
 				},
 				{
@@ -80,11 +88,63 @@
 					"strict" : false
 				},
 				{
-					"name" : "control_in[0]",
+					"name" : "S[1]",
 					"strict" : false
 				},
 				{
-					"name" : "S[1]",
+					"name" : "shift[1]",
+					"strict" : false
+				},
+				{
+					"name" : "shift[2]",
+					"strict" : false
+				},
+				{
+					"name" : "shift[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Write_Enable",
+					"strict" : false
+				},
+				{
+					"name" : "Write_Address[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Write_Address[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Write_Address[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Write_Address[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Write_Address[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Read_Address[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Read_Address[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Read_Address[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Read_Address[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Read_Address[4]",
 					"strict" : false
 				}
 			]
