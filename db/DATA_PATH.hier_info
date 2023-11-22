@@ -1,70 +1,31 @@
-|control_path
-CLK => contador_comparador:contar_comparar.CLK
-EN => contador_comparador:contar_comparar.EN
-RST => contador_comparador:contar_comparar.RST
-igual <= contador_comparador:contar_comparar.igual
-
-
-|control_path|contador_comparador:contar_comparar
-CLK => counter_32:counter.CLK
-EN => counter_32:counter.EN
-RST => counter_32:counter.RST
-igual <= comparador_32:comparador.igual
-
-
-|control_path|contador_comparador:contar_comparar|comparador_32:comparador
-num1[0] => Equal0.IN4
-num1[1] => Equal0.IN3
-num1[2] => Equal0.IN2
-num1[3] => Equal0.IN1
-num1[4] => Equal0.IN0
-num2[0] => Equal0.IN9
-num2[1] => Equal0.IN8
-num2[2] => Equal0.IN7
-num2[3] => Equal0.IN6
-num2[4] => Equal0.IN5
-igual <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|control_path|contador_comparador:contar_comparar|counter_32:counter
+|FSM_suma
 CLK => PS~1.DATAIN
-EN => PS.S0.OUTPUTSELECT
-EN => PS.S15.OUTPUTSELECT
-EN => PS.S16.OUTPUTSELECT
-EN => PS.S17.OUTPUTSELECT
-EN => PS.S18.OUTPUTSELECT
-EN => PS.S19.OUTPUTSELECT
-EN => PS.S20.OUTPUTSELECT
-EN => PS.S21.OUTPUTSELECT
-EN => PS.S22.OUTPUTSELECT
-EN => PS.S23.OUTPUTSELECT
-EN => PS.S24.OUTPUTSELECT
-EN => PS.S25.OUTPUTSELECT
-EN => PS.S26.OUTPUTSELECT
-EN => PS.S27.OUTPUTSELECT
-EN => PS.S28.OUTPUTSELECT
-EN => PS.S29.OUTPUTSELECT
-EN => PS.S30.OUTPUTSELECT
-EN => PS.S31.OUTPUTSELECT
-EN => PS.S14.OUTPUTSELECT
-EN => PS.S13.OUTPUTSELECT
-EN => PS.S12.OUTPUTSELECT
-EN => PS.S11.OUTPUTSELECT
-EN => PS.S10.OUTPUTSELECT
-EN => PS.S9.OUTPUTSELECT
-EN => PS.S8.OUTPUTSELECT
-EN => PS.S7.OUTPUTSELECT
-EN => PS.S6.OUTPUTSELECT
-EN => PS.S5.OUTPUTSELECT
-EN => PS.S4.OUTPUTSELECT
-EN => PS.S3.OUTPUTSELECT
-EN => PS.S2.OUTPUTSELECT
 EN => PS.S1.OUTPUTSELECT
+EN => PS.S2.OUTPUTSELECT
+EN => PS.S0.OUTPUTSELECT
 RST => PS~3.DATAIN
-numero[0] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-numero[1] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-numero[2] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-numero[3] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-numero[4] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+EN_REG_A <= EN_REG_A.DB_MAX_OUTPUT_PORT_TYPE
+EN_REG_B <= EN_REG_B.DB_MAX_OUTPUT_PORT_TYPE
+EN_REG_C <= EN_REG_C.DB_MAX_OUTPUT_PORT_TYPE
+EN_REG_COUT <= EN_REG_COUT.DB_MAX_OUTPUT_PORT_TYPE
+RST_REG_A <= <VCC>
+RST_REG_B <= <VCC>
+RST_REG_C <= <VCC>
+RST_REG_COUT <= <VCC>
+control_outA[0] <= <GND>
+control_outA[1] <= <GND>
+control_outA[2] <= <GND>
+control_outA[3] <= <GND>
+control_outA[4] <= <GND>
+control_outB[0] <= <VCC>
+control_outB[1] <= <GND>
+control_outB[2] <= <GND>
+control_outB[3] <= <GND>
+control_outB[4] <= <GND>
+S[0] <= <GND>
+S[1] <= <GND>
+shift[0] <= <GND>
+shift[1] <= <GND>
+shift[2] <= <VCC>
 
 

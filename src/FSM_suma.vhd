@@ -1,0 +1,86 @@
+----------------------------------------------------
+Library IEEE;
+use IEEE.std_logic_1164.all;
+----------------------------------------------------
+entity FSM_suma is
+port(
+		CLK,EN,RST : in std_logic;
+		EN_REG_A,EN_REG_B,EN_REG_C,EN_REG_COUT : out std_logic;
+		RST_REG_A,RST_REG_B,RST_REG_C,RST_REG_COUT : out std_logic;
+		control_outA,control_outB : out std_logic_vector(4 downto 0);
+		S : out std_logic_Vector(1 downto 0);
+		shift : out std_logic_vector(2 downto 0)
+		);
+end entity FSM_suma;
+----------------------------------------------------
+architecture beh of FSM_suma is
+	type estados is(S0,S1,S2);
+	signal PS,NS : estados;
+begin
+	FF_D : process(CLK,EN,RST) is
+		begin
+			if(RST = '0') then
+				PS <= S0;
+			else
+				if(EN = '1') then
+					if(CLK'event and CLK = '1') then
+						PS <= NS;
+					end if;
+				end if;
+			end if;
+		end process FF_D;
+	
+	FSM : process(PS) is
+		begin
+			
+			case(PS) is
+				
+				when S0 =>
+					EN_REG_A <= '1';
+					EN_REG_B <= '1';
+					EN_REG_C <= '1';
+					EN_REG_COUT <= '0';
+					RST_REG_A <= '1';
+					RST_REG_B <= '1';
+					RST_REG_C <= '1';
+					RST_REG_COUT <= '1';
+					control_outA <= "00000";
+					control_outB <= "00001";
+					S <= "00";
+					shift <= "100";
+					NS <= S1;
+					
+				when S1 =>
+					EN_REG_A <= '0';
+					EN_REG_B <= '0';
+					EN_REG_C <= '0';
+					EN_REG_COUT <= '1';
+					RST_REG_A <= '1';
+					RST_REG_B <= '1';
+					RST_REG_C <= '1';
+					RST_REG_COUT <= '1';
+					control_outA <= "00000";
+					control_outB <= "00001";
+					S <= "00";
+					shift <= "100";
+					NS <= S2;
+					
+				when S2 => 
+					EN_REG_A <= '0';
+					EN_REG_B <= '0';
+					EN_REG_C <= '0';
+					EN_REG_COUT <= '1';
+					RST_REG_A <= '1';
+					RST_REG_B <= '1';
+					RST_REG_C <= '1';
+					RST_REG_COUT <= '1';
+					control_outA <= "00000";
+					control_outB <= "00001";
+					S <= "00";
+					shift <= "100";
+					NS <= S0;
+			end case;
+		end process FSM;
+end architecture beh;
+					
+	

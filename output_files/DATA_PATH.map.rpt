@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DATA_PATH
-Tue Nov 21 11:36:59 2023
+Tue Nov 21 18:24:51 2023
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -13,12 +13,11 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |control_path|contador_comparador:contar_comparar|counter_32:counter|PS
+  8. State Machine - |FSM_suma|PS
   9. General Register Statistics
- 10. Port Connectivity Checks: "contador_comparador:contar_comparar|comparador_32:comparador"
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -45,16 +44,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Nov 21 11:36:59 2023       ;
+; Analysis & Synthesis Status        ; Successful - Tue Nov 21 18:24:51 2023       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; DATA_PATH                                   ;
-; Top-level Entity Name              ; control_path                                ;
+; Top-level Entity Name              ; FSM_suma                                    ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 32                                          ;
+; Total logic elements               ; 3                                           ;
 ;     Total combinational functions  ; 2                                           ;
-;     Dedicated logic registers      ; 32                                          ;
-; Total registers                    ; 32                                          ;
-; Total pins                         ; 4                                           ;
+;     Dedicated logic registers      ; 3                                           ;
+; Total registers                    ; 3                                           ;
+; Total pins                         ; 26                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -68,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                            ; control_path       ; DATA_PATH          ;
+; Top-level entity name                                            ; FSM_suma           ; DATA_PATH          ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -153,113 +152,79 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 8           ;
+; Number detected on machine ; 6           ;
+; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 8           ;
+; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-8         ;   0.0%      ;
+;     Processors 2-6         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                 ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                          ; Library ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------+---------+
-; src/counter_32.vhd               ; yes             ; User VHDL File  ; C:/Repositorios/DATA_PATH/src/counter_32.vhd          ;         ;
-; src/comparador_32.vhd            ; yes             ; User VHDL File  ; C:/Repositorios/DATA_PATH/src/comparador_32.vhd       ;         ;
-; src/control_path.vhd             ; yes             ; User VHDL File  ; C:/Repositorios/DATA_PATH/src/control_path.vhd        ;         ;
-; src/contador_comparador.vhd      ; yes             ; User VHDL File  ; C:/Repositorios/DATA_PATH/src/contador_comparador.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                         ;
++----------------------------------+-----------------+-----------------+-------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path  ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------+---------+
+; src/FSM_suma.vhd                 ; yes             ; User VHDL File  ; E:/DATA_PATH/src/FSM_suma.vhd ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 32        ;
-;                                             ;           ;
-; Total combinational functions               ; 2         ;
-; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 0         ;
-;     -- 3 input functions                    ; 0         ;
-;     -- <=2 input functions                  ; 2         ;
-;                                             ;           ;
-; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 2         ;
-;     -- arithmetic mode                      ; 0         ;
-;                                             ;           ;
-; Total registers                             ; 32        ;
-;     -- Dedicated logic registers            ; 32        ;
-;     -- I/O registers                        ; 0         ;
-;                                             ;           ;
-; I/O pins                                    ; 4         ;
-;                                             ;           ;
-; Embedded Multiplier 9-bit elements          ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; CLK~input ;
-; Maximum fan-out                             ; 32        ;
-; Total fan-out                               ; 135       ;
-; Average fan-out                             ; 3.21      ;
-+---------------------------------------------+-----------+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 3     ;
+;                                             ;       ;
+; Total combinational functions               ; 2     ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 2     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 2     ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 3     ;
+;     -- Dedicated logic registers            ; 3     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 26    ;
+;                                             ;       ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; PS.S0 ;
+; Maximum fan-out                             ; 5     ;
+; Total fan-out                               ; 44    ;
+; Average fan-out                             ; 0.77  ;
++---------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                             ;
-+------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+---------------------+--------------+
-; Compilation Hierarchy Node               ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                  ; Entity Name         ; Library Name ;
-+------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+---------------------+--------------+
-; |control_path                            ; 2 (0)               ; 32 (0)                    ; 0           ; 0            ; 0       ; 0         ; 4    ; 0            ; |control_path                                                        ; control_path        ; work         ;
-;    |contador_comparador:contar_comparar| ; 2 (0)               ; 32 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control_path|contador_comparador:contar_comparar                    ; contador_comparador ; work         ;
-;       |counter_32:counter|               ; 2 (2)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control_path|contador_comparador:contar_comparar|counter_32:counter ; counter_32          ; work         ;
-+------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+---------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; |FSM_suma                  ; 2 (2)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 26   ; 0            ; |FSM_suma           ; FSM_suma    ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |control_path|contador_comparador:contar_comparar|counter_32:counter|PS                                                                                                                                                                                                      ;
-+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-; Name   ; PS.S31 ; PS.S30 ; PS.S29 ; PS.S28 ; PS.S27 ; PS.S26 ; PS.S25 ; PS.S24 ; PS.S23 ; PS.S22 ; PS.S21 ; PS.S20 ; PS.S19 ; PS.S18 ; PS.S17 ; PS.S16 ; PS.S15 ; PS.S14 ; PS.S13 ; PS.S12 ; PS.S11 ; PS.S10 ; PS.S9 ; PS.S8 ; PS.S7 ; PS.S6 ; PS.S5 ; PS.S4 ; PS.S3 ; PS.S2 ; PS.S1 ; PS.S0 ;
-+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-; PS.S0  ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ;
-; PS.S1  ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 1     ;
-; PS.S2  ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 1     ;
-; PS.S3  ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 1     ;
-; PS.S4  ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 1     ;
-; PS.S5  ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; PS.S6  ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; PS.S7  ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; PS.S8  ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; PS.S9  ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; PS.S10 ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; PS.S11 ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; PS.S12 ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; PS.S13 ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; PS.S14 ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; PS.S15 ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; PS.S16 ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; PS.S17 ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; PS.S18 ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; PS.S19 ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; PS.S20 ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; PS.S21 ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; PS.S22 ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; PS.S23 ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; PS.S24 ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; PS.S25 ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; PS.S26 ; 0      ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; PS.S27 ; 0      ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; PS.S28 ; 0      ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; PS.S29 ; 0      ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; PS.S30 ; 0      ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; PS.S31 ; 1      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
++-------------------------------+
+; State Machine - |FSM_suma|PS  ;
++-------+-------+-------+-------+
+; Name  ; PS.S2 ; PS.S1 ; PS.S0 ;
++-------+-------+-------+-------+
+; PS.S0 ; 0     ; 0     ; 0     ;
+; PS.S1 ; 0     ; 1     ; 1     ;
+; PS.S2 ; 1     ; 0     ; 1     ;
++-------+-------+-------+-------+
 
 
 +------------------------------------------------------+
@@ -267,23 +232,14 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 32    ;
+; Total registers                              ; 3     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 32    ;
+; Number of registers using Asynchronous Clear ; 3     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 32    ;
+; Number of registers using Clock Enable       ; 3     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "contador_comparador:contar_comparar|comparador_32:comparador" ;
-+------+-------+----------+----------------------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                                        ;
-+------+-------+----------+----------------------------------------------------------------+
-; num1 ; Input ; Info     ; Stuck at VCC                                                   ;
-+------+-------+----------+----------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -291,15 +247,16 @@ Encoding Type:  One-Hot
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 4                           ;
-; cycloneiii_ff         ; 32                          ;
-;     ENA CLR           ; 32                          ;
-; cycloneiii_lcell_comb ; 2                           ;
-;     normal            ; 2                           ;
-;         1 data inputs ; 2                           ;
+; boundary_port         ; 26                          ;
+; cycloneiii_ff         ; 3                           ;
+;     ENA CLR           ; 3                           ;
+; cycloneiii_lcell_comb ; 5                           ;
+;     normal            ; 5                           ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 3                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 1.00                        ;
-; Average LUT depth     ; 0.11                        ;
+; Average LUT depth     ; 0.45                        ;
 +-----------------------+-----------------------------+
 
 
@@ -318,103 +275,123 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Tue Nov 21 11:36:48 2023
+    Info: Processing started: Tue Nov 21 18:24:43 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DATA_PATH -c DATA_PATH
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file src/ff_d.vhd
-    Info (12022): Found design unit 1: FF_D-beh File: C:/Repositorios/DATA_PATH/src/FF_D.vhd Line: 13
-    Info (12023): Found entity 1: FF_D File: C:/Repositorios/DATA_PATH/src/FF_D.vhd Line: 5
+    Info (12022): Found design unit 1: FF_D-beh File: E:/DATA_PATH/src/FF_D.vhd Line: 13
+    Info (12023): Found entity 1: FF_D File: E:/DATA_PATH/src/FF_D.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/registro_n.vhd
-    Info (12022): Found design unit 1: registro_n-beh File: C:/Repositorios/DATA_PATH/src/registro_n.vhd Line: 16
-    Info (12023): Found entity 1: registro_n File: C:/Repositorios/DATA_PATH/src/registro_n.vhd Line: 5
+    Info (12022): Found design unit 1: registro_n-beh File: E:/DATA_PATH/src/registro_n.vhd Line: 16
+    Info (12023): Found entity 1: registro_n File: E:/DATA_PATH/src/registro_n.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/decode_16x16.vhd
-    Info (12022): Found design unit 1: decode_16x16-beh File: C:/Repositorios/DATA_PATH/src/decode_16x16.vhd Line: 13
-    Info (12023): Found entity 1: decode_16x16 File: C:/Repositorios/DATA_PATH/src/decode_16x16.vhd Line: 5
+    Info (12022): Found design unit 1: decode_16x16-beh File: E:/DATA_PATH/src/decode_16x16.vhd Line: 13
+    Info (12023): Found entity 1: decode_16x16 File: E:/DATA_PATH/src/decode_16x16.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/decode_1_16.vhd
-    Info (12022): Found design unit 1: decode_1_16-beh File: C:/Repositorios/DATA_PATH/src/decode_1_16.vhd Line: 12
-    Info (12023): Found entity 1: decode_1_16 File: C:/Repositorios/DATA_PATH/src/decode_1_16.vhd Line: 5
+    Info (12022): Found design unit 1: decode_1_16-beh File: E:/DATA_PATH/src/decode_1_16.vhd Line: 12
+    Info (12023): Found entity 1: decode_1_16 File: E:/DATA_PATH/src/decode_1_16.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/file32x32.vhd
-    Info (12022): Found design unit 1: File32x32-beh File: C:/Repositorios/DATA_PATH/src/File32x32.vhd Line: 17
-    Info (12023): Found entity 1: File32x32 File: C:/Repositorios/DATA_PATH/src/File32x32.vhd Line: 5
+    Info (12022): Found design unit 1: File32x32-beh File: E:/DATA_PATH/src/File32x32.vhd Line: 17
+    Info (12023): Found entity 1: File32x32 File: E:/DATA_PATH/src/File32x32.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/block_reg.vhd
-    Info (12022): Found design unit 1: Block_REG-beh File: C:/Repositorios/DATA_PATH/src/Block_REG.vhd Line: 17
-    Info (12023): Found entity 1: Block_REG File: C:/Repositorios/DATA_PATH/src/Block_REG.vhd Line: 5
+    Info (12022): Found design unit 1: Block_REG-beh File: E:/DATA_PATH/src/Block_REG.vhd Line: 17
+    Info (12023): Found entity 1: Block_REG File: E:/DATA_PATH/src/Block_REG.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/ff_d_nr.vhd
-    Info (12022): Found design unit 1: FF_D_nr-beh File: C:/Repositorios/DATA_PATH/src/FF_D_nr.vhd Line: 13
-    Info (12023): Found entity 1: FF_D_nr File: C:/Repositorios/DATA_PATH/src/FF_D_nr.vhd Line: 5
+    Info (12022): Found design unit 1: FF_D_nr-beh File: E:/DATA_PATH/src/FF_D_nr.vhd Line: 13
+    Info (12023): Found entity 1: FF_D_nr File: E:/DATA_PATH/src/FF_D_nr.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/data_path.vhd
-    Info (12022): Found design unit 1: data_path-struct File: C:/Repositorios/DATA_PATH/src/data_path.vhd Line: 21
-    Info (12023): Found entity 1: data_path File: C:/Repositorios/DATA_PATH/src/data_path.vhd Line: 5
+    Info (12022): Found design unit 1: data_path-struct File: E:/DATA_PATH/src/data_path.vhd Line: 21
+    Info (12023): Found entity 1: data_path File: E:/DATA_PATH/src/data_path.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/registro_n_reset.vhd
-    Info (12022): Found design unit 1: registro_n_reset-beh File: C:/Repositorios/DATA_PATH/src/registro_n_reset.vhd Line: 16
-    Info (12023): Found entity 1: registro_n_reset File: C:/Repositorios/DATA_PATH/src/registro_n_reset.vhd Line: 5
+    Info (12022): Found design unit 1: registro_n_reset-beh File: E:/DATA_PATH/src/registro_n_reset.vhd Line: 16
+    Info (12023): Found entity 1: registro_n_reset File: E:/DATA_PATH/src/registro_n_reset.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/full_adder.vhd
-    Info (12022): Found design unit 1: full_adder-flow File: C:/Repositorios/DATA_PATH/src/full_adder.vhd Line: 12
-    Info (12023): Found entity 1: full_adder File: C:/Repositorios/DATA_PATH/src/full_adder.vhd Line: 5
+    Info (12022): Found design unit 1: full_adder-flow File: E:/DATA_PATH/src/full_adder.vhd Line: 12
+    Info (12023): Found entity 1: full_adder File: E:/DATA_PATH/src/full_adder.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/sumador_n.vhd
-    Info (12022): Found design unit 1: sumador_n-beh File: C:/Repositorios/DATA_PATH/src/sumador_n.vhd Line: 16
-    Info (12023): Found entity 1: sumador_n File: C:/Repositorios/DATA_PATH/src/sumador_n.vhd Line: 5
+    Info (12022): Found design unit 1: sumador_n-beh File: E:/DATA_PATH/src/sumador_n.vhd Line: 16
+    Info (12023): Found entity 1: sumador_n File: E:/DATA_PATH/src/sumador_n.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/counter_32.vhd
-    Info (12022): Found design unit 1: counter_32-beh File: C:/Repositorios/DATA_PATH/src/counter_32.vhd Line: 12
-    Info (12023): Found entity 1: counter_32 File: C:/Repositorios/DATA_PATH/src/counter_32.vhd Line: 5
+    Info (12022): Found design unit 1: counter_32-beh File: E:/DATA_PATH/src/counter_32.vhd Line: 12
+    Info (12023): Found entity 1: counter_32 File: E:/DATA_PATH/src/counter_32.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/comparador_32.vhd
-    Info (12022): Found design unit 1: comparador_32-beh File: C:/Repositorios/DATA_PATH/src/comparador_32.vhd Line: 12
-    Info (12023): Found entity 1: comparador_32 File: C:/Repositorios/DATA_PATH/src/comparador_32.vhd Line: 5
+    Info (12022): Found design unit 1: comparador_32-beh File: E:/DATA_PATH/src/comparador_32.vhd Line: 12
+    Info (12023): Found entity 1: comparador_32 File: E:/DATA_PATH/src/comparador_32.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/control_path.vhd
-    Info (12022): Found design unit 1: control_path-struc File: C:/Repositorios/DATA_PATH/src/control_path.vhd Line: 12
-    Info (12023): Found entity 1: control_path File: C:/Repositorios/DATA_PATH/src/control_path.vhd Line: 5
+    Info (12022): Found design unit 1: control_path-struc File: E:/DATA_PATH/src/control_path.vhd Line: 12
+    Info (12023): Found entity 1: control_path File: E:/DATA_PATH/src/control_path.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/contador_comparador.vhd
-    Info (12022): Found design unit 1: contador_comparador-struc File: C:/Repositorios/DATA_PATH/src/contador_comparador.vhd Line: 12
-    Info (12023): Found entity 1: contador_comparador File: C:/Repositorios/DATA_PATH/src/contador_comparador.vhd Line: 5
+    Info (12022): Found design unit 1: contador_comparador-struc File: E:/DATA_PATH/src/contador_comparador.vhd Line: 12
+    Info (12023): Found entity 1: contador_comparador File: E:/DATA_PATH/src/contador_comparador.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/and_n.vhd
-    Info (12022): Found design unit 1: and_n-flow File: C:/Repositorios/DATA_PATH/src/and_n.vhd Line: 15
-    Info (12023): Found entity 1: and_n File: C:/Repositorios/DATA_PATH/src/and_n.vhd Line: 5
+    Info (12022): Found design unit 1: and_n-flow File: E:/DATA_PATH/src/and_n.vhd Line: 15
+    Info (12023): Found entity 1: and_n File: E:/DATA_PATH/src/and_n.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/or_n.vhd
-    Info (12022): Found design unit 1: or_n-flow File: C:/Repositorios/DATA_PATH/src/or_n.vhd Line: 15
-    Info (12023): Found entity 1: or_n File: C:/Repositorios/DATA_PATH/src/or_n.vhd Line: 5
+    Info (12022): Found design unit 1: or_n-flow File: E:/DATA_PATH/src/or_n.vhd Line: 15
+    Info (12023): Found entity 1: or_n File: E:/DATA_PATH/src/or_n.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/alu_n.vhd
-    Info (12022): Found design unit 1: ALU_n-struc File: C:/Repositorios/DATA_PATH/src/ALU_n.vhd Line: 17
-    Info (12023): Found entity 1: ALU_n File: C:/Repositorios/DATA_PATH/src/ALU_n.vhd Line: 5
+    Info (12022): Found design unit 1: ALU_n-struc File: E:/DATA_PATH/src/ALU_n.vhd Line: 17
+    Info (12023): Found entity 1: ALU_n File: E:/DATA_PATH/src/ALU_n.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/mux_4_1x32.vhd
-    Info (12022): Found design unit 1: mux_4_1x32-beh File: C:/Repositorios/DATA_PATH/src/mux_4_1x32.vhd Line: 13
-    Info (12023): Found entity 1: mux_4_1x32 File: C:/Repositorios/DATA_PATH/src/mux_4_1x32.vhd Line: 5
+    Info (12022): Found design unit 1: mux_4_1x32-beh File: E:/DATA_PATH/src/mux_4_1x32.vhd Line: 13
+    Info (12023): Found entity 1: mux_4_1x32 File: E:/DATA_PATH/src/mux_4_1x32.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/mux_2_1.vhd
-    Info (12022): Found design unit 1: mux_2_1-beh File: C:/Repositorios/DATA_PATH/src/mux_2_1.vhd Line: 13
-    Info (12023): Found entity 1: mux_2_1 File: C:/Repositorios/DATA_PATH/src/mux_2_1.vhd Line: 5
+    Info (12022): Found design unit 1: mux_2_1-beh File: E:/DATA_PATH/src/mux_2_1.vhd Line: 13
+    Info (12023): Found entity 1: mux_2_1 File: E:/DATA_PATH/src/mux_2_1.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/full_sustrato.vhd
-    Info (12022): Found design unit 1: full_sustrato-flow File: C:/Repositorios/DATA_PATH/src/full_sustrato.vhd Line: 12
-    Info (12023): Found entity 1: full_sustrato File: C:/Repositorios/DATA_PATH/src/full_sustrato.vhd Line: 5
+    Info (12022): Found design unit 1: full_sustrato-flow File: E:/DATA_PATH/src/full_sustrato.vhd Line: 12
+    Info (12023): Found entity 1: full_sustrato File: E:/DATA_PATH/src/full_sustrato.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/restador_n.vhd
-    Info (12022): Found design unit 1: restador_n-beh File: C:/Repositorios/DATA_PATH/src/restador_n.vhd Line: 16
-    Info (12023): Found entity 1: restador_n File: C:/Repositorios/DATA_PATH/src/restador_n.vhd Line: 5
+    Info (12022): Found design unit 1: restador_n-beh File: E:/DATA_PATH/src/restador_n.vhd Line: 16
+    Info (12023): Found entity 1: restador_n File: E:/DATA_PATH/src/restador_n.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/ram_n.vhd
-    Info (12022): Found design unit 1: RAM_n-beh File: C:/Repositorios/DATA_PATH/src/RAM_n.vhd Line: 20
-    Info (12023): Found entity 1: RAM_n File: C:/Repositorios/DATA_PATH/src/RAM_n.vhd Line: 6
+    Info (12022): Found design unit 1: RAM_n-beh File: E:/DATA_PATH/src/RAM_n.vhd Line: 20
+    Info (12023): Found entity 1: RAM_n File: E:/DATA_PATH/src/RAM_n.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file src/mux_2_1xn.vhd
-    Info (12022): Found design unit 1: mux_2_1xn-beh File: C:/Repositorios/DATA_PATH/src/mux_2_1xn.vhd Line: 16
-    Info (12023): Found entity 1: mux_2_1xn File: C:/Repositorios/DATA_PATH/src/mux_2_1xn.vhd Line: 5
+    Info (12022): Found design unit 1: mux_2_1xn-beh File: E:/DATA_PATH/src/mux_2_1xn.vhd Line: 16
+    Info (12023): Found entity 1: mux_2_1xn File: E:/DATA_PATH/src/mux_2_1xn.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/shifter.vhd
-    Info (12022): Found design unit 1: Shifter-beh File: C:/Repositorios/DATA_PATH/src/Shifter.vhd Line: 16
-    Info (12023): Found entity 1: Shifter File: C:/Repositorios/DATA_PATH/src/Shifter.vhd Line: 5
+    Info (12022): Found design unit 1: Shifter-beh File: E:/DATA_PATH/src/Shifter.vhd Line: 16
+    Info (12023): Found entity 1: Shifter File: E:/DATA_PATH/src/Shifter.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/uv3.vhd
-    Info (12022): Found design unit 1: UV3-RTL File: C:/Repositorios/DATA_PATH/src/UV3.vhd Line: 21
-    Info (12023): Found entity 1: UV3 File: C:/Repositorios/DATA_PATH/src/UV3.vhd Line: 5
-Info (12127): Elaborating entity "control_path" for the top level hierarchy
-Info (12128): Elaborating entity "contador_comparador" for hierarchy "contador_comparador:contar_comparar" File: C:/Repositorios/DATA_PATH/src/control_path.vhd Line: 14
-Info (12128): Elaborating entity "comparador_32" for hierarchy "contador_comparador:contar_comparar|comparador_32:comparador" File: C:/Repositorios/DATA_PATH/src/contador_comparador.vhd Line: 15
-Info (12128): Elaborating entity "counter_32" for hierarchy "contador_comparador:contar_comparar|counter_32:counter" File: C:/Repositorios/DATA_PATH/src/contador_comparador.vhd Line: 16
+    Info (12022): Found design unit 1: UV3-RTL File: E:/DATA_PATH/src/UV3.vhd Line: 21
+    Info (12023): Found entity 1: UV3 File: E:/DATA_PATH/src/UV3.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file src/fsm_suma.vhd
+    Info (12022): Found design unit 1: FSM_suma-beh File: E:/DATA_PATH/src/FSM_suma.vhd Line: 16
+    Info (12023): Found entity 1: FSM_suma File: E:/DATA_PATH/src/FSM_suma.vhd Line: 5
+Info (12127): Elaborating entity "FSM_suma" for the top level hierarchy
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "RST_REG_A" is stuck at VCC File: E:/DATA_PATH/src/FSM_suma.vhd Line: 9
+    Warning (13410): Pin "RST_REG_B" is stuck at VCC File: E:/DATA_PATH/src/FSM_suma.vhd Line: 9
+    Warning (13410): Pin "RST_REG_C" is stuck at VCC File: E:/DATA_PATH/src/FSM_suma.vhd Line: 9
+    Warning (13410): Pin "RST_REG_COUT" is stuck at VCC File: E:/DATA_PATH/src/FSM_suma.vhd Line: 9
+    Warning (13410): Pin "control_outA[0]" is stuck at GND File: E:/DATA_PATH/src/FSM_suma.vhd Line: 10
+    Warning (13410): Pin "control_outA[1]" is stuck at GND File: E:/DATA_PATH/src/FSM_suma.vhd Line: 10
+    Warning (13410): Pin "control_outA[2]" is stuck at GND File: E:/DATA_PATH/src/FSM_suma.vhd Line: 10
+    Warning (13410): Pin "control_outA[3]" is stuck at GND File: E:/DATA_PATH/src/FSM_suma.vhd Line: 10
+    Warning (13410): Pin "control_outA[4]" is stuck at GND File: E:/DATA_PATH/src/FSM_suma.vhd Line: 10
+    Warning (13410): Pin "control_outB[0]" is stuck at VCC File: E:/DATA_PATH/src/FSM_suma.vhd Line: 10
+    Warning (13410): Pin "control_outB[1]" is stuck at GND File: E:/DATA_PATH/src/FSM_suma.vhd Line: 10
+    Warning (13410): Pin "control_outB[2]" is stuck at GND File: E:/DATA_PATH/src/FSM_suma.vhd Line: 10
+    Warning (13410): Pin "control_outB[3]" is stuck at GND File: E:/DATA_PATH/src/FSM_suma.vhd Line: 10
+    Warning (13410): Pin "control_outB[4]" is stuck at GND File: E:/DATA_PATH/src/FSM_suma.vhd Line: 10
+    Warning (13410): Pin "S[0]" is stuck at GND File: E:/DATA_PATH/src/FSM_suma.vhd Line: 11
+    Warning (13410): Pin "S[1]" is stuck at GND File: E:/DATA_PATH/src/FSM_suma.vhd Line: 11
+    Warning (13410): Pin "shift[0]" is stuck at GND File: E:/DATA_PATH/src/FSM_suma.vhd Line: 12
+    Warning (13410): Pin "shift[1]" is stuck at GND File: E:/DATA_PATH/src/FSM_suma.vhd Line: 12
+    Warning (13410): Pin "shift[2]" is stuck at VCC File: E:/DATA_PATH/src/FSM_suma.vhd Line: 12
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 36 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 29 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 32 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4827 megabytes
-    Info: Processing ended: Tue Nov 21 11:36:59 2023
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:24
+    Info (21059): Implemented 23 output pins
+    Info (21061): Implemented 3 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 21 warnings
+    Info: Peak virtual memory: 4805 megabytes
+    Info: Processing ended: Tue Nov 21 18:24:51 2023
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:15
 
 
