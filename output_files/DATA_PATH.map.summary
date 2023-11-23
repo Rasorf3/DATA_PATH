@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Tue Nov 21 18:24:51 2023
+Analysis & Synthesis Status : Successful - Thu Nov 23 09:41:08 2023
 Quartus Prime Version : 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 Revision Name : DATA_PATH
-Top-level Entity Name : FSM_suma
+Top-level Entity Name : UV3
 Family : Cyclone IV E
-Total logic elements : 3
-    Total combinational functions : 2
-    Dedicated logic registers : 3
-Total registers : 3
-Total pins : 26
+Total logic elements : 2,761
+    Total combinational functions : 1,705
+    Dedicated logic registers : 1,185
+Total registers : 1185
+Total pins : 46
 Total virtual pins : 0
-Total memory bits : 0
+Total memory bits : 1,024
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 0

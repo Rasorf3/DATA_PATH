@@ -4,7 +4,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 ---------------------------------------------------
 entity Shifter is
 generic(
-			n: natural:=8
+			n: natural:=32
 			);
 port(
 		S : in std_logic_vector(2 downto 0);
@@ -61,7 +61,8 @@ begin
 			end loop;
 			D_out_aux(n-1) := D_in(n-1);
 			D_out_aux(0) := '0';
-
+		else
+			D_out_aux := D_in_aux;
 		end if;
 		D_OUT <= D_out_aux;
 	end process;
